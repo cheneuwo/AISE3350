@@ -1,11 +1,11 @@
-# Welcome to your Jupyter Book
+<!-- #region -->
+# AISE 3350 Introduction to Cyber Physical Systems
 
-This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
+[**Prof. Elvis C. S. Chen**](https://www.eng.uwo.ca/electrical//faculty/chen_e/index.html)
 
-Check out the content pages bundled with this sample book to see more.
+<!-- #endregion -->
+
+These lecture notes in Jupyter are part of the undergraduate course for students in the [Department of Electrical and Computer Engineering](https://www.eng.uwo.ca/electrical/) at [Western University in Canada](https://www.uwo.ca/). Currently named as **AISE 3350**, this course introduces basic concepts in Cyber Physical Systems (CPS).
 
 ```{tableofcontents}
 ```
