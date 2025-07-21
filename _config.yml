@@ -3,6 +3,7 @@
 
 title: Cyber Physica Systems
 author: Prof. Elvis Chen
+copyright: "2025"  # Copyright year to be placed in the footer
 logo: logo.png
 
 # Force re-execution of notebooks on each build.
