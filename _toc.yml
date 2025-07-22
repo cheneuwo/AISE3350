@@ -5,4 +5,9 @@ format: jb-book
 root: intro
 chapters:
 - file: docs/Introduction/Background.ipynb
+- file: docs/Modelling_physical/Background.ipynb
+- file: docs/Hybrid/Background.ipynb
+- file: docs/Control/Background.ipynb
+- file: docs/Modelling_computation/Background.ipynb
+- file: docs/Sensing_Actuation/Background.ipynb
 - file: docs/Conclusion/bibliography.ipynb
