@@ -8,6 +8,7 @@ parts:
     chapters:
     - file: docs/Introduction/Background.ipynb
       sections:
+      - file: docs/Introduction/Illustration.ipynb
       - file: docs/Introduction/Intro_example.ipynb
   - caption: Others
     chapters:
