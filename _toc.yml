@@ -9,7 +9,8 @@ parts:
     - file: docs/Introduction/Background.ipynb
       sections:
       - file: docs/Introduction/Illustration.ipynb
-      - file: docs/Introduction/Intro_example.ipynb
+      - file: docs/Introduction/Intro_example_scooter.ipynb
+      - file: docs/Introduction/Intro_example_self_driving.ipynb
   - caption: Others
     chapters:
     - file: docs/Modelling_physical/Background.ipynb
