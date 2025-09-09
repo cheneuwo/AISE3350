@@ -11,6 +11,7 @@ parts:
       - file: docs/Introduction/Illustration.ipynb
       - file: docs/Introduction/Intro_example_scooter.ipynb
       - file: docs/Introduction/Intro_example_self_driving.ipynb
+      - file: docs/Introduction/Intro_example_pacemaker.ipynb
   - caption: Others
     chapters:
     - file: docs/Modelling_physical/Background.ipynb
