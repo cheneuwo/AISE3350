@@ -12,7 +12,9 @@ parts:
       - file: docs/Introduction/Intro_example_scooter.ipynb
       - file: docs/Introduction/Intro_example_self_driving.ipynb
       - file: docs/Introduction/Intro_example_pacemaker.ipynb
-      - file: docs/Introduction/Intro_other_examples.ipynb
+      - file: docs/Introduction/Intro_example_vacuum.ipynb
+      - file: docs/Introduction/Intro_example_lighting.ipynb
+      - file: docs/Introduction/Intro_considerations.ipynb
   - caption: Others
     chapters:
     - file: docs/Modelling_physical/Background.ipynb
