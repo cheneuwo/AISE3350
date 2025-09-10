@@ -15,6 +15,7 @@ parts:
       - file: docs/Introduction/Intro_example_vacuum.ipynb
       - file: docs/Introduction/Intro_example_lighting.ipynb
       - file: docs/Introduction/Intro_example_smarthome.ipynb
+      - file: docs/Introduction/Intro_differentiation.ipynb
       - file: docs/Introduction/Intro_considerations.ipynb
   - caption: Others
     chapters:
