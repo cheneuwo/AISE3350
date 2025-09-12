@@ -17,6 +17,8 @@ parts:
       - file: docs/Introduction/Intro_example_smarthome.ipynb
       - file: docs/Introduction/Intro_differentiation.ipynb
       - file: docs/Introduction/Intro_considerations.ipynb
+      - file: docs/Introduction/Intro_reading.ipynb
+      - file: docs/Introduction/Intro_exercise.ipynb
   - caption: Others
     chapters:
     - file: docs/Modelling_physical/Background.ipynb
