@@ -18,12 +18,9 @@ parts:
       - file: docs/Introduction/Intro_differentiation.ipynb
       - file: docs/Introduction/Intro_considerations.ipynb
       - file: docs/Introduction/Intro_reading.ipynb
-      - file: docs/Introduction/Intro_exercise.ipynb
-  - caption: Others
+      - file: docs/Introduction/Intro_exercise.ipynb  
+  - caption: Modelling Physical Systems
     chapters:
-    - file: docs/Modelling_physical/Background.ipynb
-    - file: docs/Hybrid/Background.ipynb
-    - file: docs/Control/Background.ipynb
-    - file: docs/Modelling_computation/Background.ipynb
-    - file: docs/Sensing_Actuation/Background.ipynb
-    - file: docs/Conclusion/bibliography.ipynb
+    - file: docs/Modelling_physical/Modelling_Intro.ipynb
+      sections:
+      - file: docs/Modelling_physical/Conservation_laws.ipynb
