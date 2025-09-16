@@ -24,3 +24,4 @@ parts:
     - file: docs/Modelling_physical/Modelling_Intro.ipynb
       sections:
       - file: docs/Modelling_physical/Conservation_laws.ipynb
+      - file: docs/Modelling_physical/Mechanical_systems.ipynb
