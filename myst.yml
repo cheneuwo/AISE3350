@@ -16,8 +16,6 @@ project:
           city: London
           state: Ontario
           country: Canada
-        - id: robarts
-          institution: Robarts Research Institute
   github: https://github.com/cheneuwo/AISE3350
   bibliography:
     - references.bib
@@ -28,7 +26,11 @@ project:
     - file: README.md
     - title: Part 1
       children:
-        - file: CPS_intro.md
+        - file: .\docs\part01\CPS_intro.md
+  exports:
+    - format: pdf
+      template: plain_typst_book
+      articles: README.md
 site:
   template: book-theme
   options:
