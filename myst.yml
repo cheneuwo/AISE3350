@@ -2,14 +2,37 @@
 version: 1
 project:
   id: 70546c62-843d-4a88-8a4c-1c11d0a0dcc3
-  # title:
-  # description:
-  # keywords: []
-  # authors: []
-  github: https://github.com/cheneuwo/jb2_template
+  title: Cyber-Physical Systems Theory
+  description: Supplemental course materials for AISE 3350A offered by the Department of Electrical and Computer Engineering at Western University.
+  keywords:
+    - jupyterbook
+  authors:
+    - name: "Prof. Elvis C. S. Chen"
+      email: "echen29@uwo.ca"
+      affiliations:
+        - id: uwo
+          institution: Western University
+          department: Department of Electrical and Computer Engineering
+          city: London
+          state: Ontario
+          country: Canada
+        - id: robarts
+          institution: Robarts Research Institute
+  github: https://github.com/cheneuwo/AISE3350
+  bibliography:
+    - references.bib
+  copyright: "2026"
+  date: 2026-08-26
   # To autogenerate a Table of Contents, run "jupyter book init --write-toc"
+  toc:
+    - file: README.md
+    - title: Part 1
+      children:
+        - file: CPS_intro.md
 site:
   template: book-theme
-  # options:
+  options:
   #   favicon: favicon.ico
-  #   logo: site_logo.png
+    logo: site_logo.png
+  parts:
+    primary_sidebar_footer: primary-sidebar-footer.md
