@@ -34,5 +34,8 @@ site:
   options:
   #   favicon: favicon.ico
     logo: site_logo.png
+    hide_toc: false
+    hide_footer_links: false
+    hide_outline: false
   parts:
     primary_sidebar_footer: primary-sidebar-footer.md
