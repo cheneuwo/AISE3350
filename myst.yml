@@ -26,7 +26,7 @@ project:
     - file: README.md
     - title: Part 1
       children:
-        - file: .\docs\part01\CPS_intro.md
+        - file: Part01_00_CPS_intro.md
   exports:
     - format: pdf
       template: plain_typst_book
