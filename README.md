@@ -6,7 +6,7 @@ AISE 3350A is a third-year undergraduate course offered by the [Department of El
 
 Cyber-physical systems (CPSs) integrate physical processes with computation, communication, and control. Their operations are monitored, coordinated, controlled, and integrated through computing and communication components.
 
-While CPS is inherently interdisciplinary, this course places particular emphasis on its **control-theoretic foundations**, including:
+While CPS is inherently interdisciplinary, this course places particular emphasis on its **control-theory foundations**, including:
 
 - continuous-time system modelling;
 - state-space models and transfer functions;

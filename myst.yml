@@ -20,17 +20,19 @@ project:
   bibliography:
     - references.bib
   copyright: "2026"
-  date: 2026-08-26
+  date: 2026-08-28
   # To autogenerate a Table of Contents, run "jupyter book init --write-toc"
   toc:
     - file: README.md
     - title: Part 1
       children:
-        - file: Part01_00_CPS_intro.md
+        - file: docs/Part01/Part01_00_CPS_intro.md
   exports:
     - format: pdf
-      template: plain_typst_book
-      articles: README.md
+      template: https://github.com/myst-templates/plain_typst_book.git
+      output: exports/AISE3350A.pdf
+      articles:
+        - README.md
 site:
   template: book-theme
   options:
