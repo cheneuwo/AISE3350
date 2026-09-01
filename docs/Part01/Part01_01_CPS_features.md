@@ -67,6 +67,11 @@ The detail for concurrency is not a focus for this course.
 
 ## Feedback Control of the Physical World
 
+Instead, the majority of this course is focused on [control theory](wiki:Control_theory). A *control system* interacts with the physical world in a feedback loop by measuring the environment via *sensors* and influencing it via *actuators*. The cruise controller of a car, using the previous example, is constantly monitoring the current speed of the car and adjusting the input to the engine so that the measured speed stays close to the desired crusing speed. Controllers are components of a CPS, and this integration of computing devices with the physical world sets CPSs apart from the traditional computers.
+
+
+
+
 Feedback control provides the central connection between computation and physical behaviour.
 
 A humanoid robot may use inertial sensors, joint encoders, force sensors, cameras, and other instruments to estimate its physical state. The controller compares the estimated state with the desired motion and calculates corrective commands. Electric motors then apply torque at the joints.
