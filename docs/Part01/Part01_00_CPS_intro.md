@@ -8,7 +8,7 @@ Cyber-physical systems, or **CPSs**, are physical, biological, and engineered sy
 The above definition is paraphrased by [one of the earliest presentations given by Helen Gill of the US National Science Foundation in 2008](https://labs.ece.uw.edu/nsl/aar-cps/Gill_HCSS_Transportation_Cyber-Physical_Systems_2008.pdf).
 :::
 
-A cyber-physical system, or **CPS**, is an orchestration of computing and physical systems, coordinated via a communication mechanism. Embedded computers monitor and control physical processes, usually with feedback loops, where physical processes affect computations and *vice versa* [@Lee2015].
+A cyber-physical system, or **CPS**, is an orchestration of computing and physical systems, coordinated via a communication mechanism. Embedded computing cores monitor and control physical processes, usually with feedback loops, where physical processes affect computations and *vice versa* [@Lee2015].
 
 Applications of CPS includes autonomous vehicles, industrial robots, medical devices, smart building/city, power grids, and transportation networks. While theye systems operate in different environments, they share a common structure: computation cores communicating with one another and interacting with the physical world via sensors and actuators in a feedback loop. More concretely:
 - Computation core receives information about a physical process (via sensors),
