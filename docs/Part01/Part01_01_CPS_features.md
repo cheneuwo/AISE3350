@@ -8,7 +8,7 @@ Cyber-physical systems is ubiquitous in modern society, exemplary includes auton
 4. **Real-time computation**
 5. **Safety-critical applications**
 
-A timely example (2026-08-31) that illustrates all five characteristics is a **humanoid robot**.
+A timely example (as of 2026-08-31) that illustrates all five characteristics is a **humanoid robot**.
 
 ## Humanoid Robots as Cyber-Physical Systems
 
@@ -26,7 +26,7 @@ Humanoid robots has advanced in recent years, [capable of performing household a
   </iframe>
 </div>
 
-At first glance, the most impressive feature of the robot is its speed. From a cyber-physical systems perspective, however, how to maintain bipedalism and stability, e.g. without tipping over, is a harder task to achieve. Towards the end of the race, you will notice that the more difficult task for the humanoid robot to achieve is how to stop gracefully: **hint** many humanoid robots simply fall or run into a wall once the race is completed. [Bipedalism](wiki:Bipedalism) robotics is inherently difficult due to control design challenges includeing hight degrees-of-freedom, hybrid nonlinear dynamics, and persistent but hard-to-model ground impacts [@LCP+2021]. Generally, the common challenges of biped robots include, but not limited to, the following [@MMA+2022]:
+At first glance, the most impressive feature of the robot is its speed. From a cyber-physical systems perspective, however, how to maintain bipedalism and stability, e.g. without tipping over, is a harder task to achieve. Towards the end of the race, you will notice that the more difficult task for the humanoid robot to achieve is how to stop gracefully: **hint** many humanoid robots simply fall or run into a wall once the race is completed. [Bipedalism](wiki:Bipedalism) robotics is inherently difficult due to control design challenges includeing, but not limited to, the following [@LCP+2021,MMA+2022]:
 
 - Bipedal robots have unstable structures due to the passive joints located at the unilateral contact between the foot and the ground,
 - One-sided contact of the foot with the ground and a complex configuration of the gait cycle bring about the highly non-linear trajectory of the bipedal robot,
@@ -42,91 +42,28 @@ A controller designed primarily to maximize forward speed may not automatically 
 A successful humanoid robot must do more than reach a high speed. It must maintain dynamic balance, reject disturbances, coordinate many actuators, and transition safely between standing, accelerating, running, decelerating, and stopping.
 ```
 
-Humanoid demonstrations receive considerable attention because they resemble human motion. However, the broader impact of robotics is not limited to humanoid machines.
-
-A related [BBC report on automation in China](https://www.bbc.com/news/articles/c62m4zn1q6mo) describes robots being used for welding, painting, lifting, assembly, manufacturing, and the development of medical instruments. These less visible industrial systems are also cyber-physical systems. They combine sensing, computation, communication, and control to influence physical processes.
-
 The humanoid robot provides a particularly useful example because the interaction between cyber and physical components is easy to observe.
 
 ## Reactive Computation
 
-Traditional computer programs are often described as computations that receive an input, perform a sequence of operations, produce an output, and then terminate. A cyber-physical system normally operates differently.
+In the classical model of computation, a computing device produces an output based on the given input. For example, a [sorting algorithm](wiki:Sorting_algorithm) takes, as the input, a list of numbers and returs, as the output, a list of the same set of number but in a sorted manner. Based on the [algorithm](wiki:algorithm) used, the manner of how computating was performed and its complexity are generally well-understood. Mathematical expressions and algorithms are often abstracted as functions and procedures, allowing one to build an increasingly complex computational methods by decomposing simpler functions. The notion of correctness of such a program is often captured mathematically as a *function* from input values to output values.
 
-A CPS is **reactive** because it continuously responds to events and measurements from its environment. Its computation does not simply run once and terminate. Instead, it remains active while the physical process continues to evolve.
-
-For a humanoid robot, relevant events may include:
-
-- a foot contacting the ground;
-- a foot losing contact with the ground;
-- the torso beginning to tilt;
-- an unexpected external disturbance;
-- a change in the desired speed;
-- the detection of an obstacle; and
-- a command to stop.
-
-The robot must respond to these events as they occur. Its future computation depends on new measurements received from the physical world.
-
-A simplified reactive cycle is
-
-\[
-\text{measure}
-\longrightarrow
-\text{estimate}
-\longrightarrow
-\text{decide}
-\longrightarrow
-\text{act}
-\longrightarrow
-\text{measure again}.
-\]
-
-This cycle continues throughout the robot's operation.
-
-```{admonition} Reactive versus transformational computation
-:class: note
-
-A **transformational computation** converts a given input into an output and then terminates.
-
-A **reactive computation** maintains an ongoing interaction with its environment.
-```
-
-A payroll calculation is primarily transformational: employee data are supplied, calculations are performed, and a result is produced. A robot-balancing controller is reactive: it must continue observing and responding for as long as the robot remains active.
-
-Reactive computation does not necessarily mean that the system responds correctly. The system must still determine which events are important, what information is required, and which action should be produced.
+A *reactive* system, in contrast, interacts with its environment in an **ongoing manner** via inputs and outputs [@Alur2015]. A typical example of reactive computation is the cruise controller of a car. Such a system receives high-level input commands such as turning on or off the cruise controller and for changing the desired crusing speed. The control program needs to respond to such inputs by changing its output, which corresponds to the force that is applied to the engine throttle. The behaviour of such a system is natually described by a *sequence* of observed inputs and outputs, and the notion of correcness specifies which input/out sequences corresponds to acceptable behaviour.
 
 ## Concurrency
 
-A humanoid robot does not perform only one task at a time. Many physical and computational processes occur simultaneously.
+In a traditional *sequential* model of computation, the computation consists of a sequence of sequence of instructions executed one at a time. A humanoid robot does not perform only one task at a time. Many physical and computational processes occur simultaneously. This simultaneous activity is called **concurrency**, where multiples threads of computation (i.e. components or processes), are executed concurrently, communicating with one another with information to achieve the desired outcome of the computation. Using the humanoid robot as an example, visual perception may update more slowly than joint-position measurements. A high-level motion planner may update more slowly than the low-level balance controller. Nevertheless, their results must remain sufficiently consistent for the complete robot to operate safely.
 
-While the robot is running:
+```{admonition} Concurrency
+:class: important
 
-- the left and right legs are moving;
-- the arms may move to regulate angular momentum;
-- sensors are collecting measurements;
-- state-estimation algorithms are updating estimates;
-- balance controllers are calculating corrections;
-- trajectory planners are generating desired motions;
-- motor controllers are regulating joint torque;
-- communication buses are transferring information; and
-- safety monitors are checking operating limits.
+Understanding models and design principles for *distributed* and *concurrent* computation is critical for CPSs. Categorically, these models can be divided into:
 
-This simultaneous activity is called **concurrency**.
+1. *synchronous* models, where components are executed in lock-steps, and the computation progresses in a logical sequence of synchronized rounds; and
+2. *asynchronous* models, where components are executed at independent speeds, exchanging information by sending and receiving messages.
+```
 
-Concurrency exists in both domains of a CPS. Multiple computational tasks execute concurrently, while multiple physical processes also evolve concurrently. The design must coordinate these activities even though they may operate at different rates.
-
-For example, visual perception may update more slowly than joint-position measurements. A high-level motion planner may update more slowly than the low-level balance controller. Nevertheless, their results must remain sufficiently consistent for the complete robot to operate safely.
-
-Concurrency creates several engineering questions:
-
-- Which computations may execute simultaneously?
-- Which computations depend on the results of others?
-- How is shared sensor information managed?
-- What happens when two tasks produce conflicting commands?
-- Which task receives processor time when resources are limited?
-- How are computations operating at different rates coordinated?
-- How are delayed or missing measurements handled?
-
-These questions are especially important because the physical world does not pause while the computer completes its calculations.
+The detail for concurrency is not a focus for this course.
 
 ## Feedback Control of the Physical World
 
