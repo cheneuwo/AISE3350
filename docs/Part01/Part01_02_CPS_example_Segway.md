@@ -43,6 +43,8 @@ A self-balancing transporter may include the following components:
 
 - **Embedded control board:** Processes sensor measurements, estimates the state of the transporter, and calculates motor commands.
 
+The transporter's electric propulsion system works in close coordination with its digital sensing and control systems, thereby producing smooth and stable motion. This coordinated operation can be compared to the human balance system: the sensors function like the **inner ear**, the embedded controller acts like the **brain**, and the electric motors serve as the **muscular system**. Together, they sense motion, determine an appropriate response, and apply corrective forces to maintain balance.
+
 ```{admonition} Components of CPSs
 :class: important
 
