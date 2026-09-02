@@ -1,18 +1,18 @@
 # Key Features of Cyber-Physical Systems
 
-Cyber-physical systems is ubiquitous in modern society, exemplary includes autonomous vehicles, industrial robots, smart buildings and cities, and large-scale electrical networks. Although these systems operate in different physical environments, they share several important characteristics. Alur identifies five distinguishing characteristics of cyber-physical systems [@Alur2015]:
+Cyber-physical systems are ubiquitous in modern society. Examples include autonomous vehicles, industrial robots, smart buildings and cities, and large-scale electrical networks. Although these systems operate in different physical environments, they share several important characteristics. Alur identifies five distinguishing characteristics of cyber-physical systems [@Alur2015]:
 
 1. **Reactive computation**
-2. **Concurrency**
-3. **Feedback control of the physical world**
-4. **Real-time computation**
-5. **Safety-critical applications**
+1. **Concurrency**
+1. **Feedback control of the physical world**
+1. **Real-time computation**
+1. **Safety-critical applications**
 
 A timely example (as of 2026-08-31) that illustrates all five characteristics is a **humanoid robot**.
 
 ## Humanoid Robots as Cyber-Physical Systems
 
-Humanoid robots has advanced in recent years, [capable of performing household and industrial tasks such as folding laundry and welding](https://www.bbc.com/news/articles/c62m4zn1q6mo). The following BBC video shows humanoid robots participating in running competitions:
+Humanoid robots have advanced considerably in recent years and are now [capable of performing household and industrial tasks such as folding laundry and welding](https://www.bbc.com/news/articles/c62m4zn1q6mo). The following BBC video shows humanoid robots participating in running competitions:
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe
@@ -26,77 +26,55 @@ Humanoid robots has advanced in recent years, [capable of performing household a
   </iframe>
 </div>
 
-At first glance, the most impressive feature of the robot is its speed. From a cyber-physical systems perspective, however, how to maintain bipedalism and stability, e.g. without tipping over, is a harder task to achieve. Towards the end of the race, you will notice that the more difficult task for the humanoid robot to achieve is how to stop gracefully: **hint** many humanoid robots simply fall or run into a wall once the race is completed. [Bipedalism](wiki:Bipedalism) robotics is inherently difficult due to control design challenges includeing, but not limited to, the following [@LCP+2021,MMA+2022]:
+At first glance, the robot's most impressive feature may be its speed. From a cyber-physical systems perspective, however, maintaining balance and dynamic stability without falling is an even more demanding task. Toward the end of the race, notice the challenge of stopping gracefully: many humanoid robots simply fall or run into a padded barrier after crossing the finish line. Bipedal robotics is inherently difficult because of control-design challenges that include, but are not limited to, the following [@LCP+2021,MMA+2022]:
 
-- Bipedal robots have unstable structures due to the passive joints located at the unilateral contact between the foot and the ground,
-- One-sided contact of the foot with the ground and a complex configuration of the gait cycle bring about the highly non-linear trajectory of the bipedal robot,
-- Bipedal robots have multiple degrees of freedom. Most researchers uses simplified models to reach a trade-off between simplicity and the dexterity,
-- Bipedal robots are most often designed to interact with unknown environment and are expected to achieve a high level of autonomy, and
-- Simulation is required as a part of many control strategies for bipedal walking.
+- Bipedal robots have unstable structures due to the passive joints located at the unilateral contact between the foot and the ground;
+- One-sided contact of the foot with the ground and a complex configuration of the gait cycle bring about the highly non-linear trajectory of the bipedal robot;
+- Bipedal robots have many degrees of freedom. Researchers often use simplified models to balance computational tractability and model fidelity;
+- Bipedal robots are often designed to interact with unknown environments and are expected to achieve a high level of autonomy;
+- Simulation is an important component of many control strategies for bipedal locomotion.
 
-A controller designed primarily to maximize forward speed may not automatically produce a safe or stable stop.
-
-```{admonition} Speed is not the complete objective
-:class: important
-
-A successful humanoid robot must do more than reach a high speed. It must maintain dynamic balance, reject disturbances, coordinate many actuators, and transition safely between standing, accelerating, running, decelerating, and stopping.
-```
-
-The humanoid robot provides a particularly useful example because the interaction between cyber and physical components is easy to observe.
+The humanoid robot provides a particularly useful example because the interaction between its cyber and physical components is easy to observe.
 
 ## Reactive Computation
 
-In the classical model of computation, a computing device produces an output based on the given input. For example, a [sorting algorithm](wiki:Sorting_algorithm) takes, as the input, a list of numbers and returs, as the output, a list of the same set of number but in a sorted manner. Based on the [algorithm](wiki:algorithm) used, the manner of how computating was performed and its complexity are generally well-understood. Mathematical expressions and algorithms are often abstracted as functions and procedures, allowing one to build an increasingly complex computational methods by decomposing simpler functions. The notion of correctness of such a program is often captured mathematically as a *function* from input values to output values.
+In the classical model of computation, a computing device produces an output from a given input. For example, a [sorting algorithm](wiki:Sorting_algorithm) takes a list of numbers as input and returns those numbers in sorted order as output. Depending on the [algorithm](wiki:Algorithm) used, the way in which the computation is performed and its computational complexity are generally well understood. Mathematical expressions and algorithms are often abstracted as functions and procedures, allowing increasingly complex computational methods to be built by composing simpler functions. The correctness of such a program is often characterized mathematically by a *function* that maps input values to output values.
 
-A *reactive* system, in contrast, interacts with its environment in an **ongoing manner** via inputs and outputs [@Alur2015]. A typical example of reactive computation is the cruise controller of a car. Such a system receives high-level input commands such as turning on or off the cruise controller and for changing the desired crusing speed. The control program needs to respond to such inputs by changing its output, which corresponds to the force that is applied to the engine throttle. The behaviour of such a system is natually described by a *sequence* of observed inputs and outputs, and the notion of correcness specifies which input/out sequences corresponds to acceptable behaviour.
+A *reactive* system, in contrast, interacts with its environment in an **ongoing manner** through inputs and outputs [@Alur2015]. A bipedal robot programmed to traverse a given environment may encounter, for example, uneven ground or obstacles along its path. These conditions may not -- and often cannot -- be fully accounted for during path planning. The robot must therefore react to conditions that were not included in its original plan. The behaviour of a reactive system is naturally described by a *sequence* of observed inputs and outputs, and its correctness specifies which input–output sequences correspond to acceptable behaviour.
 
 ## Concurrency
 
-In a traditional *sequential* model of computation, the computation consists of a sequence of sequence of instructions executed one at a time. A humanoid robot does not perform only one task at a time. Many physical and computational processes occur simultaneously. This simultaneous activity is called **concurrency**, where multiples threads of computation (i.e. components or processes), are executed concurrently, communicating with one another with information to achieve the desired outcome of the computation. Using the humanoid robot as an example, visual perception may update more slowly than joint-position measurements. A high-level motion planner may update more slowly than the low-level balance controller. Nevertheless, their results must remain sufficiently consistent for the complete robot to operate safely.
+In a traditional *sequential* model of computation, a sequence of instructions is executed one instruction at a time. A humanoid robot, however, does not perform only one task at a time. Many physical and computational processes occur simultaneously. This simultaneous activity is called **concurrency**. Multiple threads of computation -- that is, multiple components or processes -- execute concurrently and exchange information to achieve the desired system behaviour. At any given time, the humanoid robot may be required to:
+
+- perceive its dynamic environment using cameras and algorithms such as [SLAM](wiki:Simultaneous_localization_and_mapping) for three-dimensional reconstruction, [image segmentation](wiki:Image_segmentation), and [object detection](wiki:Object_detection);
+- compute the poses (positions and orientations) of its end effectors using [joint kinematics](wiki:Kinematic_chain);
+- estimate its centre of mass; and
+- determine how to move while maintaining stability.
+
+Both the acquisition rates of the sensor data streams and the subsequent processing, communication, and actuation times may differ among sensors and actuators
 
 ```{admonition} Concurrency
 :class: important
 
-Understanding models and design principles for *distributed* and *concurrent* computation is critical for CPSs. Categorically, these models can be divided into:
+Understanding models and design principles for *distributed* and *concurrent* computation is critical for CPSs. Broadly, these models can be divided into:
 
-1. *synchronous* models, where components are executed in lock-steps, and the computation progresses in a logical sequence of synchronized rounds; and
-2. *asynchronous* models, where components are executed at independent speeds, exchanging information by sending and receiving messages.
+1. *synchronous* models, in which components execute in lock-step and computation progresses through a logical sequence of synchronized rounds; and
+2. *asynchronous* models, in which components execute at independent rates and exchange information by sending and receiving messages.
 ```
 
-The detail for concurrency is not a focus for this course.
+A detailed treatment of concurrency is beyond the scope of this course.
 
 ## Feedback Control of the Physical World
 
-Instead, the majority of this course is focused on [control theory](wiki:Control_theory). A *control system* interacts with the physical world in a feedback loop by measuring the environment via *sensors* and influencing it via *actuators*. The cruise controller of a car, using the previous example, is constantly monitoring the current speed of the car and adjusting the input to the engine so that the measured speed stays close to the desired crusing speed. Controllers are components of a CPS, and this integration of computing devices with the physical world sets CPSs apart from the traditional computers.
+The majority of this course instead focuses on [control theory](wiki:Control_theory). The aim is to develop models and algorithms that govern the application of system inputs to drive a system toward a **desired state**, while minimizing undesirable effects such as *delay*, *overshoot*, and *steady-state error* and ensuring an appropriate level of [stability](wiki:Stability_theory).
 
-
-
-
-Feedback control provides the central connection between computation and physical behaviour.
-
-A humanoid robot may use inertial sensors, joint encoders, force sensors, cameras, and other instruments to estimate its physical state. The controller compares the estimated state with the desired motion and calculates corrective commands. Electric motors then apply torque at the joints.
-
-A simplified feedback loop is
-
-\[
-\text{Desired motion}
-\longrightarrow
-\text{Controller}
-\longrightarrow
-\text{Motors}
-\longrightarrow
-\text{Robot dynamics}
-\longrightarrow
-\text{Sensors}
-\longrightarrow
-\text{Controller}.
-\]
+A *control system* interacts with the physical world in a feedback loop by measuring the environment through *sensors* and influencing it through *actuators*. A common example is a car's cruise-control system: given a desired cruising speed, the controller adjusts inputs such as engine throttle and braking so that the measured speed remains close to the desired speed. A humanoid robot may use inertial sensors, joint encoders, force sensors, cameras, and other instruments to estimate its physical state. The controller compares this estimated state with the desired motion and calculates corrective commands. 
 
 Let
 
-- \(r(t)\) denote the desired motion;
+- \(x(t)\) denote the desired motion;
 - \(y(t)\) denote the measured motion;
-- \(e(t)=r(t)-y(t)\) denote the tracking error; and
+- \(e(t)=x(t)-y(t)\) denote the tracking error; and
 - \(u(t)\) denote the motor command.
 
 The controller uses the error and other estimated quantities to calculate \(u(t)\). The motor command changes the robot's physical motion, producing new sensor measurements.
@@ -113,110 +91,18 @@ Feedback allows the robot to correct deviations caused by:
 
 Without feedback, even a small error could grow until the robot loses its balance.
 
-Stopping provides a particularly useful illustration. When the desired speed changes from a positive value to zero, the robot cannot simply switch off its motors. It must generate a coordinated sequence of actions that reduces forward momentum while maintaining balance.
-
-The stopping manoeuvre may require the robot to:
-
-1. modify its desired foot-placement locations;
-2. reduce its forward acceleration;
-3. apply braking torques at several joints;
-4. control the motion of its torso and arms;
-5. maintain sufficient ground contact; and
-6. transition from a running gait to a stable standing posture.
-
-The success of the manoeuvre depends on the complete feedback loop rather than on a single motor command.
+The design of controllers for the physical world requires models of the dynamics of physical quantities. The theory of dynamical control systems is a well-developed discipline with a rich set of mathematical tools for design and analysis, and a sound understanding of these principles is valuable to CPS engineers. Traditional [control theory](wiki:Control_theory) focuses primarily on *continuous-time* systems. In a CPS, however, a controller may consist of discrete software components operating concurrently and in multiple modes while interacting with a continuously evolving physical environment. Systems that combine *discrete* and *continuous* dynamics are called **hybrid systems**. The principles used to design and analyse controllers for such systems will be studied later in this course.
 
 ## Real-Time Computation
 
-A computation is **real-time** when the time at which its result is produced forms part of its correctness.
-
-For a humanoid robot, a balance correction must be calculated and applied before the robot moves too far from a recoverable state. A motor command that would have been correct several milliseconds earlier may no longer be appropriate for the robot's current posture.
-
-The total response delay may include
-
-\[
-T_{\mathrm{loop}}
-=
-T_{\mathrm{sensing}}
-+
-T_{\mathrm{communication}}
-+
-T_{\mathrm{computation}}
-+
-T_{\mathrm{actuation}}.
-\]
-
-Each term contributes to the time between a physical event and the resulting physical response.
-
-Real-time computation does not simply mean that a computer is fast. A processor can perform millions of operations per second and still fail to meet the deadline imposed by the physical process.
-
-The relevant question is therefore not
-
-> Is the computer fast?
-
-but rather
-
-> Does the complete sensing–computation–actuation loop respond before the physical deadline?
-
-The deadline is determined by the dynamics of the physical system. A building-temperature controller may tolerate delays of several seconds. A balancing robot requires responses on a much shorter timescale.
-
-```{admonition} Temporal correctness
-:class: important
-
-For a real-time CPS, correctness has two components:
-
-1. the computed result must be logically correct; and
-2. the result must be produced and applied at the correct time.
-```
-
-Timing behaviour may be affected by:
-
-- sensor sampling rates;
-- processor scheduling;
-- communication delays;
-- variation in execution time;
-- contention for shared resources;
-- packet loss and retransmission; and
-- actuator response time.
-
-Therefore, the timing of the complete system must be considered rather than only the execution time of one algorithm.
+[Real-time computing](wiki:Real-time_computing) refers to hardware and software systems that are subject to timing constraints: they must produce responses within specified time limits, often called **deadlines**. For a CPS with real-time requirements, the design must account for the time required by its subcomponents to perform computations, communicate results, and actuate the physical system. Consequently, the design and implementation of real-time CPSs require an understanding of timing delays, their effects on correctness and system performance, timing-dependent coordination protocols, and resource-allocation strategies that ensure predictable execution.
 
 ## Safety-Critical Applications
 
-Many cyber-physical systems interact directly with people, equipment, infrastructure, or the environment. A failure may therefore cause physical harm rather than only producing incorrect information.
+Cyber-physical systems interact directly with people, equipment, infrastructure, or the environment. A failure may therefore cause physical harm rather than merely produce incorrect information. Applications in which *safety* takes priority over other design objectives, such as performance and development cost, are called *safety-critical*. Computing devices that control aircraft, automobiles, and medical devices are examples of CPS components used in safety-critical applications. In this context, establishing at design time that the system operates correctly is of paramount importance and may be mandatory under government regulations and certification requirements.
 
-A humanoid robot may:
+A traditional approach to system development is to design and implement a system and then conduct extensive testing and validation to detect errors. A more principled approach begins by writing mathematically precise requirements for the desired system, developing models of the system components and their operating environment, and using analysis tools to determine whether the system model satisfies those requirements. This methodology can detect design errors at earlier stages and help achieve greater reliability. Approaches based on [formal models](wiki:Formal_methods) and verification are particularly valuable in safety-critical applications and are increasingly being adopted in industry.
 
-- fall onto a nearby person;
-- collide with an obstacle;
-- apply excessive joint torque;
-- lose control while carrying an object;
-- continue moving after receiving a stop command;
-- damage nearby equipment; or
-- behave unpredictably after a sensor or communication failure.
-
-Safety must therefore be considered at the level of the complete system. It is not sufficient to verify that each software function produces the expected numerical result.
-
-A safe humanoid-robot system may require:
-
-- limits on speed, force, and joint torque;
-- emergency-stop mechanisms;
-- collision detection;
-- fault detection and isolation;
-- redundant sensing;
-- safe operating regions;
-- controlled degradation after a failure; and
-- a stable stopping strategy.
-
-Not every CPS has the same level of safety criticality. A smart thermostat and a cardiac pacemaker are both cyber-physical systems, but the immediate consequences of failure are very different. Safety requirements must therefore be derived from the application and its physical environment.
-
-```{admonition} Safety and performance are different requirements
-:class: warning
-
-A robot may satisfy a performance objective, such as completing a race quickly, while failing a safety objective, such as stopping without a collision.
-
-A successful CPS design must satisfy both types of requirements.
-```
 
 ## Connecting the Five Features
 
@@ -262,27 +148,11 @@ For the humanoid robot, identify:
 
 ### Exercise 3: Concurrency
 
-List five physical or computational activities that must occur concurrently while the robot is running.
+List three physical or computational activities that must occur concurrently while the robot is running.
 
 Identify one pair of concurrent activities that must exchange information.
 
-### Exercise 4: Feedback-loop delay
-
-Suppose the robot has the following delays:
-
-| Operation | Delay |
-|---|---:|
-| Sensor acquisition | \(2.0\text{ ms}\) |
-| State estimation | \(1.5\text{ ms}\) |
-| Control calculation | \(0.8\text{ ms}\) |
-| Communication | \(0.7\text{ ms}\) |
-| Actuator response | \(4.0\text{ ms}\) |
-
-1. Calculate the total feedback-loop delay.
-2. If the robot is moving at \(8\text{ m/s}\), how far does it travel during this delay?
-3. Explain why this distance alone is not sufficient to determine whether the robot remains stable.
-
-### Exercise 5: Safety and performance
+### Exercise 4: Safety and performance
 
 A robot completes a race in record time but cannot stop without colliding with a padded barrier.
 
@@ -294,7 +164,7 @@ Discuss whether its control system has succeeded. Consider:
 - safety; and
 - the definition of successful system operation.
 
-### Exercise 6: Feature identification
+### Exercise 5: Feature identification
 
 Select one of the following systems:
 
@@ -308,4 +178,4 @@ For each of Alur's five CPS characteristics, provide one application-specific ex
 
 ### Exercise 7: Short reflection
 
-In no more than three sentences, explain why a humanoid robot is a cyber-physical system rather than simply a computer-controlled machine.
+Explain why a humanoid robot is a cyber-physical system rather than simply a computer-controlled machine.
