@@ -28,6 +28,7 @@ project:
       children:
         - file: docs/Part01/Part01_00_CPS_intro.md
         - file: docs/Part01/Part01_01_CPS_features.md
+        - file: docs/Part01/Part01_02_CPS_example_Segway.md
   exports:
     - format: pdf
       template: https://github.com/myst-templates/plain_typst_book.git
