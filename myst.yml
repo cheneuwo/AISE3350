@@ -30,6 +30,7 @@ project:
         - file: docs/Part01/Part01_01_CPS_features.md
         - file: docs/Part01/Part01_02_CPS_example_Segway.md
         - file: docs/Part01/Part01_03_CPS_example_Autonomous_Vehicle.md
+        - file: docs/Part01/Part01_04_CPS_example_Pacemakers.md
   exports:
     - format: pdf
       template: https://github.com/myst-templates/plain_typst_book.git
