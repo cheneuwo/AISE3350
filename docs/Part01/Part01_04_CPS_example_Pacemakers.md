@@ -64,5 +64,3 @@ The article emphasizes **heart-rate variability**, including the temporal relati
 Implementation also matters. The authors investigate an FPGA realization to examine hardware requirements, connecting the mathematical controller to its computational implementation.
 
 Thus, the pacemaker is not merely an electronic device attached to the heart. It participates in a coupled system in which **physical behaviour informs computation, and computation influences physical behaviour**.
-
-The fractional-order controller is a research proposal, not a feature that should be attributed to every commercial pacemaker.
