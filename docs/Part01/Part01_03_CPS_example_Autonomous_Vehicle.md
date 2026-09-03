@@ -14,7 +14,6 @@ An [autonomous vehicle](wiki:Self-driving_car) is a car that is capable of opera
   </iframe>
 </div>
 
-
 ## Why Is It a Cyber-Physical System?
 
 An autonomous vehicle is a cyber-physical system because it tightly integrates computational decision-making with physical motion in the real world.
@@ -28,8 +27,6 @@ This creates a continuous feedback loop:
 3. Planning algorithms decide what the vehicle should do.
 4. Controllers send commands to steering, braking, and acceleration systems.
 5. The vehicle moves, changing the physical environment and restarting the loop.
-
-
 
 ## Principal Components
 An autonomous vehicle must be aware of its environment. This is achieved using an array of sensors, including but not limited to:
@@ -48,7 +45,6 @@ In addition to sensors, autonomous vehicles also require:
 - **Control systems:** Convert planned motion into steering, braking, and acceleration commands.
 - **Actuators:** Physically control the vehicle’s movement.
 - **Communication systems:** Allow vehicles to exchange information with infrastructure, cloud services, or other vehicles when needed.
-
 
 ## What Are Some Current Issues?
 
