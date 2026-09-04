@@ -48,6 +48,25 @@ In addition to sensors, autonomous vehicles also require:
 
 ## What Are Some Current Issues?
 
+[Vehicle-to-everything (V2X)](wiki:Vehicle-to-everything)  describes wireless communication between a vehicle and other entities that may affect, or be affected by, the vehicle. In a broader vehicle-connectivity context, related categories
+include:
+
+- **[Vehicle-to-device (V2D)](wiki:Vehicle-to-device):** Communication with personal devices, such as smartphones, using technologies such as Bluetooth and Wi-Fi. Examples include wireless Apple CarPlay and Android Auto.
+
+- **[Vehicle-to-grid](wiki:Vehicle-to-grid):** Communication supporting coordination between electric vehicles and the electrical grid, including energy management and bidirectional power transfer.
+
+- **Vehicle-to-network (V2N):** Communication between a vehicle and a wider network, such as a cellular network.
+
+- **Vehicle-to-cloud (V2C):** Communication with cloud-based services, for example, over-the-air (OTA) software updates and remote vehicle diagnostics.
+
+- **[Vehicle-to-infrastructure (V2I)](wiki:Vehicle_infrastructure_integration):** Communication with equipped infrastructure, such as traffic signals, roadside units, and smart parking systems.
+
+- **Vehicle-to-pedestrian (V2P):** Communication with devices used by pedestrians and other vulnerable road users, including cyclists and wheelchair users.
+
+- **Vehicle-to-vehicle (V2V):** Exchange of time-sensitive information with nearby vehicles.
+
+Standards for many of these communication functions already exist, while interoperability, industry adoption, and large-scale deployment continue to develop.
+
 ### Network Connectivity
 
 If a fleet of autonomous vehicles relies on a network to communicate with each other or with a central hub, network reliability becomes critical. Poor connectivity, delayed commands, or software coordination failures can affect the behavior of many vehicles at once.
