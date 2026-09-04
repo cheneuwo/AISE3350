@@ -26,11 +26,11 @@ project:
     - file: README.md
     - title: CPS Foundations and Architecture
       children:
-        - file: docs/Part01/Part01_00_CPS_intro.md
-        - file: docs/Part01/Part01_01_CPS_features.md
-        - file: docs/Part01/Part01_02_CPS_example_Segway.md
-        - file: docs/Part01/Part01_03_CPS_example_Autonomous_Vehicle.md
-        - file: docs/Part01/Part01_04_CPS_example_Pacemakers.md
+        - file: docs/Part01/Part01_000_CPS_intro.md
+        - file: docs/Part01/Part01_005_CPS_features.md
+        - file: docs/Part01/Part01_010_CPS_example_Segway.md
+        - file: docs/Part01/Part01_015_CPS_example_Autonomous_Vehicle.md
+        - file: docs/Part01/Part01_020_CPS_example_Pacemakers.md
   exports:
     - format: pdf
       template: https://github.com/myst-templates/plain_typst_book.git
