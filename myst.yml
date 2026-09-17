@@ -20,29 +20,29 @@ project:
   bibliography:
     - docs/references.bib
   copyright: "2026"
-  date: 2026-09-16
+  date: 2026-09-17
   # To autogenerate a Table of Contents, run "jupyter book init --write-toc"
   toc:
     - file: README.md
     - title: CPS Foundations and Architecture
       children:
-        - file: docs/Part01/Part01_000_CPS_intro.md
-        - file: docs/Part01/Part01_005_CPS_features.md
-        - file: docs/Part01/Part01_010_CPS_example_Segway.md
-        - file: docs/Part01/Part01_015_CPS_example_Autonomous_Vehicle.md
-        - file: docs/Part01/Part01_020_CPS_example_Pacemakers.md
-        - file: docs/Part01/Part01_025_CPS_example_Others.md
-        - file: docs/Part01/Part01_030_CPS_discussion.md
-        - file: docs/Part01/Part01_035_CPS_Hybrid.md
-        - file: docs/Part01/Part01_040_CPS_Embedded.md
-        - file: docs/Part01/Part01_045_CPS_Realtime.md
-        - file: docs/Part01/Part01_050_CPS_Reliability.md
-        - file: docs/Part01/Part01_055_CPS_Dependability.md
-        - file: docs/Part01/Part01_060_CPS_Other_disciplines.md
-        - file: docs/Part01/Part01_065_CPS_Summary.md
+        - file: docs/Part01/Part01_00000_CPS_intro.md
+        - file: docs/Part01/Part01_00005_CPS_features.md
+        - file: docs/Part01/Part01_00010_CPS_example_Segway.md
+        - file: docs/Part01/Part01_00015_CPS_example_Autonomous_Vehicle.md
+        - file: docs/Part01/Part01_00020_CPS_example_Pacemakers.md
+        - file: docs/Part01/Part01_00025_CPS_example_Others.md
+        - file: docs/Part01/Part01_00030_CPS_discussion.md
+        - file: docs/Part01/Part01_00035_CPS_Hybrid.md
+        - file: docs/Part01/Part01_00040_CPS_Embedded.md
+        - file: docs/Part01/Part01_00045_CPS_Realtime.md
+        - file: docs/Part01/Part01_00050_CPS_Reliability.md
+        - file: docs/Part01/Part01_00055_CPS_Dependability.md
+        - file: docs/Part01/Part01_00060_CPS_Other_disciplines.md
+        - file: docs/Part01/Part01_00065_CPS_Summary.md
     - title: Communication and Security
       children:
-        - file: docs/Part01/Part01_100_CPS_Communication.md
+        - file: docs/Part01/Part01_00100_CPS_Communication.md
   exports:
     - format: pdf
       template: https://github.com/myst-templates/plain_typst_book.git
