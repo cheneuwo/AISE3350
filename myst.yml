@@ -20,7 +20,7 @@ project:
   bibliography:
     - docs/references.bib
   copyright: "2026"
-  date: 2026-09-17
+  date: 2026-09-23
   # To autogenerate a Table of Contents, run "jupyter book init --write-toc"
   toc:
     - file: README.md
@@ -43,6 +43,8 @@ project:
     - title: Communication and Security
       children:
         - file: docs/Part01/Part01_00100_CPS_Communication.md
+        - file: docs/Part01/Part01_00105_CPS_V2X.md
+        - file: docs/Part01/Part01_00110_CPS_V2V.md
   exports:
     - format: pdf
       template: https://github.com/myst-templates/plain_typst_book.git
