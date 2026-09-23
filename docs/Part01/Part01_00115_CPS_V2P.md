@@ -1,0 +1,9 @@
+# Vehicle-to-Pedestrian (V2P)
+
+Collisions involving peestrians and cyclists comprise a large proportion of traffic fatalities. 
+[Vehicle-to-Pedestrian (V2P)](https://rosap.ntl.bts.gov/view/dot/55626) is a technilogy being developed to detect and communicate the presence of at-risk pedestrians or cyclists through augmented sensors and communication systems, potentially reducing the number of vehicle-pedestrian collisions.
+
+## Implementations:
+- **Vehicle-Based**: This type of system detects pedestrians and alerts drivers through the vehicle or infrastructure. In some cases, technologies are also capable of intervening to prevent the crash if the driver fails to respond adequately. Two systems were tested under this category: a *camera-based* aftermarket safety device and a *camera-radar* fusion integrated detection and collision mitigation system.
+- **Smartphone-Based**: This type of system detects vehicles and notifies a pedestrian when they are about to be in a dangerous situation using a hand-held device or infrastructure. Typically, these systems operate through a user’s mobile phone. The software used was in the early-deployment stage; necessary hardware and software was installed at the Test Be
+- **Infrastructure-Based**: This type of system has the potential to serve as a “bilateral detection and notification system” which will provide collision alerts to both drivers and  pedestrians in parallel, if not only to the drivers at a minimum. No technology was acquired to test this category due to the lack of market readiness, however, comprehensive research was conducted to investigate its potential

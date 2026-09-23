@@ -45,6 +45,7 @@ project:
         - file: docs/Part01/Part01_00100_CPS_Communication.md
         - file: docs/Part01/Part01_00105_CPS_V2X.md
         - file: docs/Part01/Part01_00110_CPS_V2V.md
+        - file: docs/Part01/Part01_00115_CPS_V2P.md
   exports:
     - format: pdf
       template: https://github.com/myst-templates/plain_typst_book.git
