@@ -52,6 +52,14 @@ project:
         - file: docs/Part01/Part01_00200_CPS_Connectivities.md
         - file: docs/Part01/Part01_00205_CPS_Security.md
         - file: docs/Part01/Part01_00300_CPS_Automation.md
+        - file: docs/Part01/Part01_00305_CPS_SAE_vehicle_autonomy.md
+        - file: docs/Part01/Part01_00310_CPS_SAE_vehicle_autonomy_level_0.md
+        - file: docs/Part01/Part01_00315_CPS_SAE_vehicle_autonomy_level_1.md
+        - file: docs/Part01/Part01_00320_CPS_SAE_vehicle_autonomy_level_2.md
+        - file: docs/Part01/Part01_00325_CPS_SAE_vehicle_autonomy_level_3.md
+        - file: docs/Part01/Part01_00330_CPS_SAE_vehicle_autonomy_level_4.md
+        - file: docs/Part01/Part01_00335_CPS_SAE_vehicle_autonomy_level_5.md
+        - file: docs/Part01/Part01_00340_CPS_SAE_vehicle_autonomy_summary.md
   exports:
     - format: pdf
       template: https://github.com/myst-templates/plain_typst_book.git
