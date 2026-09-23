@@ -1,7 +1,8 @@
 # Vehicle-to-Device (V2D)
 
-[Vehicle-to-Device (V2D)](wiki:Vehicle-to-device) is a particular type of vehicular communication system that consists in the exchange information between a vehicle and any electronic device that may be connected to the vehicle itself. The key point is to extend the capabilities of the vehicle via the connected device.
+[Vehicle-to-device (V2D)](wiki:Vehicle-to-device) communication involves the exchange of information between a vehicle and a connected electronic device. Its purpose is to extend the vehicle’s capabilities through the connected device.
 
-Examples include:
-- Android Auto,
-- Apple Car Play.
+Examples include smartphone integration platforms such as:
+
+- **Android Auto**
+- **Apple CarPlay**

@@ -1,12 +1,13 @@
 # Communication
 
-While AISE 3350 is focused on control theory, it is worth while to introduct the communication aspect of CPSs and security risks associated with it.
+While AISE 3350 focuses on control theory, it is worthwhile to introduce the communication aspect of CPSs and the security risks associated with it.
 
-Communication enables the cyber (computational) and physical component of a CPS to exchange information. It is multi-scale:
-- Within an individual system, sensors communicate measurements to controllers, and controllers send commands to actuators, and
-- Between systems, communication support coordination, shared information, and access to remote services.
+Communication enables the cyber (computational) and physical components of a CPS to exchange information. It occurs at multiple scales:
 
-Perhaps a timely example (as of this writing) is the coordination of nearly 3000 drones:
+- Within an individual system, sensors communicate measurements to controllers, and controllers send commands to actuators.
+- Between systems, communication supports coordination, information sharing, and access to remote services.
+
+Perhaps a timely example, as of this writing, is the coordination of nearly 3,000 drones:
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe
@@ -24,21 +25,22 @@ Together with computation and control, communication forms the **3C foundation**
 
 :::{note}
 Discuss:
+
 - What sensors and actuators may be integrated into a single drone?
-- What communication (coordination) must take place *within* a single drone?
-- What communication (coordination) must take place *among* a swarm of drones?
-::::
+- What communication and coordination must take place **within** a single drone?
+- What communication and coordination must take place **among** drones in a swarm?
+:::
 
 ## Communication Within and Between CPSs
 
-Communication occurs at different level/scales. Treating modern  vehicle as a CPS, embedded controllers exchange information with sensors and actuators through in-vehicle network. For example, when a [hybrid vehicle](wiki:Hybrid_vehicle) or [EV](Electric_vehicle) on cruise control is travelling downhill, regenerative braking will be activated to maintain the cruising speed and the battery will be charged accordingly. Converse, when a hybrid vehicle on cruise control is convelling uphill, the [engine](wiki:Internal_combustion_engine) may be engaged. Such exchanges of information typically occur through wired connections, and without involving the Internet.
+Communication occurs at different levels and scales. When we consider a modern vehicle as a CPS, its embedded controllers exchange information with sensors and actuators through an in-vehicle network. For example, when a [hybrid vehicle](wiki:Hybrid_vehicle) or [electric vehicle (EV)](wiki:Electric_vehicle) operating under cruise control travels downhill, regenerative braking will be activated to maintain the cruising speed, charging the battery in the process. Conversely, when a hybrid vehicle operating under cruise control travels uphill, the [engine](wiki:Internal_combustion_engine) may be engaged. Such exchanges of information typically occur through wired connections without involving the Internet.
 
 :::{important}
-A CPS can be considered as a collection of embedded systems, each internnected *vertically*, i.e. top-down integration of embedded systems.
+A CPS can be considered a collection of embedded systems interconnected **vertically**, that is, through the top-down integration of embedded systems.
 :::
 
-Beyond the vehicle, wireless communication enable information exchange with nearby vehicle, roadside infrastructure, and remote services. These connections can extend a system's awareness beyond its own sensors. Information from other vehicles along a route, for example, could provide a harzard or local traffic that is not yet visible to the driver or onboard sensors.
+Beyond the vehicle, wireless communication enables information exchange with nearby vehicles, roadside infrastructure, and remote services. These connections can extend a system's awareness beyond its own sensors. Information from other vehicles along a route, for example, could provide details about a hazard or local traffic conditions that are not yet visible to the driver or onboard sensors.
 
 :::{important}
-CPSs can also communicate *horizontally* with each other to form a CPS of a larger scale.
+CPSs can also communicate **horizontally** with each other to form a larger-scale CPS.
 :::
