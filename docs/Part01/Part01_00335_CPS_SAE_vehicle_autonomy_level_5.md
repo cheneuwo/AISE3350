@@ -11,6 +11,7 @@ Unlike Level 4, its automated driving capability is not restricted to a particul
 :alt: Vehicle Autonomy, level 5.
 :width: 600px
 :align: center
+```
 
 ## The Human's Role
 

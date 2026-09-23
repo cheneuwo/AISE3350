@@ -11,6 +11,7 @@ Unlike Level 3, Level 4 does not depend on a fallback-ready human. If continued 
 :alt: Vehicle Autonomy, level 4.
 :width: 600px
 :align: center
+```
 
 ## The Human's Role
 

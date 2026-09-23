@@ -9,6 +9,7 @@ The human does not need to supervise the system continuously while the Level 3 f
 :alt: Vehicle Autonomy, level 3.
 :width: 600px
 :align: center
+```
 
 ## The Human's Role
 

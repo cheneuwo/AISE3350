@@ -9,6 +9,7 @@ In the terminology emphasized by SAE J3016_202609, this is driver support for **
 :alt: Vehicle Autonomy, level 1.
 :width: 600px
 :align: center
+```
 
 ## The Human's Role
 

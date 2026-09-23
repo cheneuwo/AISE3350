@@ -9,6 +9,7 @@ This level is commonly known as **partial driving automation**. The defining dis
 :alt: Vehicle Autonomy, level 2.
 :width: 600px
 :align: center
+```
 
 ## The Human's Role
 

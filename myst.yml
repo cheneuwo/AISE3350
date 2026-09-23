@@ -60,6 +60,18 @@ project:
         - file: docs/Part01/Part01_00330_CPS_SAE_vehicle_autonomy_level_4.md
         - file: docs/Part01/Part01_00335_CPS_SAE_vehicle_autonomy_level_5.md
         - file: docs/Part01/Part01_00340_CPS_SAE_vehicle_autonomy_summary.md
+        - file: docs/Part01/Part01_00400_CPS_medical_robots.md
+        - file: docs/Part01/Part01_00405_CPS_Total_Knee_Arthroplasty.md
+        - file: docs/Part01/Part01_00410_CPS_Medical_Robot_autonomy.md
+        - file: docs/Part01/Part01_00415_CPS_Medical_Robot_autonomy_level_0.md
+        - file: docs/Part01/Part01_00420_CPS_Medical_Robot_autonomy_level_1.md
+        - file: docs/Part01/Part01_00425_CPS_Medical_Robot_autonomy_level_2.md
+        - file: docs/Part01/Part01_00430_CPS_Medical_Robot_autonomy_level_3.md
+        - file: docs/Part01/Part01_00435_CPS_Medical_Robot_autonomy_level_4.md
+        - file: docs/Part01/Part01_00440_CPS_Medical_Robot_autonomy_level_5.md
+        - file: docs/Part01/Part01_00442_CPS_Medical_Robot_autonomy_examples.md
+        - file: docs/Part01/Part01_00445_CPS_Medical_Robot_autonomy_summary.md
+        - file: docs/Part01/Part01_00450_CPS_autonomy_conclusion.md
   exports:
     - format: pdf
       template: https://github.com/myst-templates/plain_typst_book.git
