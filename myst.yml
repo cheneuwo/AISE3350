@@ -20,7 +20,7 @@ project:
   bibliography:
     - docs/references.bib
   copyright: "2026"
-  date: 2026-09-23
+  date: 2026-09-24
   # To autogenerate a Table of Contents, run "jupyter book init --write-toc"
   toc:
     - file: README.md
@@ -72,6 +72,9 @@ project:
         - file: docs/Part01/Part01_00442_CPS_Medical_Robot_autonomy_examples.md
         - file: docs/Part01/Part01_00445_CPS_Medical_Robot_autonomy_summary.md
         - file: docs/Part01/Part01_00450_CPS_autonomy_conclusion.md
+    - title: System Performance in Frequency Domain
+      children:
+        - file: docs/Part02/Part02_00100_Intro_Laplace.md
   exports:
     - format: pdf
       template: https://github.com/myst-templates/plain_typst_book.git
